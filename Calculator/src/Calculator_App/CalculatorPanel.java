@@ -95,18 +95,22 @@ public class CalculatorPanel extends JPanel {
 			
 			// To add the numbers on the screen
 			
-			if(e.getActionCommand() != "." && firstValue || !firstValue) {
-				if(firstValue && Integer.parseInt(e.getActionCommand()) != 0 && e.getActionCommand() != ".") {
-					
-					firstValue = false;
-					
-					screen.setText("" + e.getActionCommand());
-				}
-				else if(Double.parseDouble(screen.getText()) != 0) screen.setText(screen.getText() + e.getActionCommand());
+			if(firstValue && e.getActionCommand() != ".") {
+				
+				firstValue = false;
+				
+				screen.setText("");
 			}
-			
-		}
+			else if(firstValue && Double.parseDouble(screen.getText()) != 0 && e.getActionCommand() == ".") {
+				
+				firstValue = false;
+				
+				screen.setText("0");
+			}
+			else firstValue = false;
 		
+			screen.setText(screen.getText() + e.getActionCommand());
+		}
 	}
 	
 	private class Operations implements ActionListener {
