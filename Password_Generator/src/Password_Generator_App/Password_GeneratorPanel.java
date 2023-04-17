@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class Password_GeneratorPanel extends JPanel {
 
-	private JButton password;
+	private TextField password;
 	private JPanel checkBoxPanel;
 	private JSpinner mySpinner;
 	private JCheckBox checkBox1, checkBox2, checkBox3, checkBox4;
@@ -20,9 +20,9 @@ public class Password_GeneratorPanel extends JPanel {
 		
 		// The screen to display the generated password. 
 		
-		password = new JButton("New Password");
+		password = new TextField("New Password");
 		
-		password.setEnabled(false);
+		//password.setEnabled(false);
 		
 		add(password, BorderLayout.NORTH);
 		
